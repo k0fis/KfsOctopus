@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.ServiceImplementations" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Octop.ActionService.ServiceImplementations">
+    <xs:simpleType name="SpecialAccessType">
+        <xs:list>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="MonitoringSoukromaInzerce"/>
+                    <xs:enumeration value="LvKeeper"/>
+                    <xs:enumeration value="MonitoringRkInzerce"/>
+                    <xs:enumeration value="ParovaniSoukromeInzerce"/>
+                    <xs:enumeration value="ParovaniRkInzerce"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:list>
+    </xs:simpleType>
+    <xs:element name="SpecialAccessType" nillable="true" type="tns:SpecialAccessType"/>
+</xs:schema>

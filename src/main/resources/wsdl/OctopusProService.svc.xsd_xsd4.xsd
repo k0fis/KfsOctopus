@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects">
+    <xs:complexType name="ArrayOftHitDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="tHitDTO" nillable="true" type="tns:tHitDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOftHitDTO" nillable="true" type="tns:ArrayOftHitDTO"/>
+    <xs:complexType name="tHitDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="AdvertID" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Area" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="BodyText" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ClientSMS" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="CommercialMode" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="DateOfFirstRelease" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="DateOfGrab" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="DateOfLastChange" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="DetailURL" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="HitRepeatCount" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdCategory" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdCountry" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdHit" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdPortal" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdRA" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdRegion" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdVlastnictvi" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdZUJ" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Locality" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Obec" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="OfferType" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="Phone1" nillable="true" type="xs:long"/>
+            <xs:element minOccurs="0" name="Phone2" nillable="true" type="xs:long"/>
+            <xs:element minOccurs="0" name="Phone3" nillable="true" type="xs:long"/>
+            <xs:element minOccurs="0" name="PhoneRepeatCount" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="Price" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="Publisher" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="SubCategory" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="SubRegion" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="Type" type="xs:int"/>
+            <xs:element minOccurs="0" name="jtskx" nillable="true" type="xs:long"/>
+            <xs:element minOccurs="0" name="jtsky" nillable="true" type="xs:long"/>
+            <xs:element minOccurs="0" name="kodKatastralUzemi" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="nameRA" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="tHitDTO" nillable="true" type="tns:tHitDTO"/>
+    <xs:complexType name="ArrayOftUserDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="tUserDTO" nillable="true" type="tns:tUserDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOftUserDTO" nillable="true" type="tns:ArrayOftUserDTO"/>
+    <xs:complexType name="tUserDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="IdRealAgencyClient" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdUser" type="xs:int"/>
+            <xs:element minOccurs="0" name="IsActive" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="Role" type="xs:int"/>
+            <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="tUserDTO" nillable="true" type="tns:tUserDTO"/>
+    <xs:complexType name="ArrayOftSearchProfileDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="tSearchProfileDTO" nillable="true" type="tns:tSearchProfileDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOftSearchProfileDTO" nillable="true" type="tns:ArrayOftSearchProfileDTO"/>
+    <xs:complexType name="tSearchProfileDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="AdvertAgeDays" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="EXEK_IdSubRegion" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="EXEK_LV" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="EXEK_LocalitySelectionMode" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="EXEK_Obec" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="EXEK_Ulice" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="EXEK_ViewExecution" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="EXEK_ViewFinished" nillable="true" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="EXEK_Vlastnik" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="EXEK_dateFrom" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="EXEK_dateTo" nillable="true" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="EXEK_omezeniPrava" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="EXEK_omezeniPrava_extended" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="EXEK_podleKU_IdRegion" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="EXEK_podleKU_IdSubRegion" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="EXEK_podleKU_kodKatastralUzemi" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="ExekuceSet" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="FullText" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="IdSearchProfile" type="xs:int"/>
+            <xs:element minOccurs="0" name="OfferType" type="xs:int"/>
+            <xs:element minOccurs="0" name="OnlyNews" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="Position" type="xs:int"/>
+            <xs:element minOccurs="0" name="PriceFrom" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="PriceTo" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="ProfileName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ProfileType" type="xs:int"/>
+            <xs:element minOccurs="0" name="RefreshEachNminutes" type="xs:int"/>
+            <xs:element minOccurs="0" name="SearchProfileCategories" nillable="true" type="tns:ArrayOftSearchProfileCategoryDTO"/>
+            <xs:element minOccurs="0" name="SearchProfileRegions" nillable="true" type="tns:ArrayOftSearchProfileRegionDTO"/>
+            <xs:element minOccurs="0" name="UniqueInPortals" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="tSearchProfileDTO" nillable="true" type="tns:tSearchProfileDTO"/>
+    <xs:complexType name="ArrayOftSearchProfileCategoryDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="tSearchProfileCategoryDTO" nillable="true" type="tns:tSearchProfileCategoryDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOftSearchProfileCategoryDTO" nillable="true" type="tns:ArrayOftSearchProfileCategoryDTO"/>
+    <xs:complexType name="tSearchProfileCategoryDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CommercialMode" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdCategory" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdSearchProfile" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdSearchProfileCategory" type="xs:int"/>
+            <xs:element minOccurs="0" name="SubCategory" nillable="true" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="tSearchProfileCategoryDTO" nillable="true" type="tns:tSearchProfileCategoryDTO"/>
+    <xs:complexType name="ArrayOftSearchProfileRegionDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="tSearchProfileRegionDTO" nillable="true" type="tns:tSearchProfileRegionDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOftSearchProfileRegionDTO" nillable="true" type="tns:ArrayOftSearchProfileRegionDTO"/>
+    <xs:complexType name="tSearchProfileRegionDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="IdRegion" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdSearchProfile" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdSearchProfileRegion" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdSubRegion" nillable="true" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="tSearchProfileRegionDTO" nillable="true" type="tns:tSearchProfileRegionDTO"/>
+    <xs:complexType name="ArrayOfOfferTypeDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="OfferTypeDTO" nillable="true" type="tns:OfferTypeDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOfOfferTypeDTO" nillable="true" type="tns:ArrayOfOfferTypeDTO"/>
+    <xs:complexType name="OfferTypeDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="OfferType" type="xs:int"/>
+            <xs:element minOccurs="0" name="OfferTypeName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="OfferTypeDTO" nillable="true" type="tns:OfferTypeDTO"/>
+    <xs:complexType name="ArrayOfCategoryDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryDTO" nillable="true" type="tns:CategoryDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOfCategoryDTO" nillable="true" type="tns:ArrayOfCategoryDTO"/>
+    <xs:complexType name="CategoryDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Category" type="xs:int"/>
+            <xs:element minOccurs="0" name="CategoryAbbrev" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="IdCategory" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CategoryDTO" nillable="true" type="tns:CategoryDTO"/>
+    <xs:complexType name="ArrayOfSubCategoryDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="SubCategoryDTO" nillable="true" type="tns:SubCategoryDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOfSubCategoryDTO" nillable="true" type="tns:ArrayOfSubCategoryDTO"/>
+    <xs:complexType name="SubCategoryDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="IdCategory" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdSubCategory" type="xs:int"/>
+            <xs:element minOccurs="0" name="SubCategory" type="xs:int"/>
+            <xs:element minOccurs="0" name="SubCategoryAbbrev" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="SubCategoryName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="SubCategoryDTO" nillable="true" type="tns:SubCategoryDTO"/>
+    <xs:complexType name="ArrayOfCommercialModeDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="CommercialModeDTO" nillable="true" type="tns:CommercialModeDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOfCommercialModeDTO" nillable="true" type="tns:ArrayOfCommercialModeDTO"/>
+    <xs:complexType name="CommercialModeDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CommercialMode" type="xs:int"/>
+            <xs:element minOccurs="0" name="CommercialModeName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="IdCommercialMode" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CommercialModeDTO" nillable="true" type="tns:CommercialModeDTO"/>
+    <xs:complexType name="ArrayOfRegionDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="RegionDTO" nillable="true" type="tns:RegionDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOfRegionDTO" nillable="true" type="tns:ArrayOfRegionDTO"/>
+    <xs:complexType name="RegionDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="IdRegion" type="xs:int"/>
+            <xs:element minOccurs="0" name="Region" type="xs:int"/>
+            <xs:element minOccurs="0" name="RegionName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="RegionDTO" nillable="true" type="tns:RegionDTO"/>
+    <xs:complexType name="ArrayOfSubRegionDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="SubRegionDTO" nillable="true" type="tns:SubRegionDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOfSubRegionDTO" nillable="true" type="tns:ArrayOfSubRegionDTO"/>
+    <xs:complexType name="SubRegionDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="IdRegion" type="xs:int"/>
+            <xs:element minOccurs="0" name="IdSubRegion" type="xs:int"/>
+            <xs:element minOccurs="0" name="SubRegionName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="SubRegionDTO" nillable="true" type="tns:SubRegionDTO"/>
+    <xs:complexType name="ArrayOfRoleDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleDTO" nillable="true" type="tns:RoleDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOfRoleDTO" nillable="true" type="tns:ArrayOfRoleDTO"/>
+    <xs:complexType name="RoleDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="IdRole" type="xs:int"/>
+            <xs:element minOccurs="0" name="Role" type="xs:int"/>
+            <xs:element minOccurs="0" name="RoleKey" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="RoleDTO" nillable="true" type="tns:RoleDTO"/>
+    <xs:complexType name="ArrayOfCountryDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="CountryDTO" nillable="true" type="tns:CountryDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOfCountryDTO" nillable="true" type="tns:ArrayOfCountryDTO"/>
+    <xs:complexType name="CountryDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="IdCountry" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CountryDTO" nillable="true" type="tns:CountryDTO"/>
+    <xs:complexType name="ArrayOfOwnershipDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="OwnershipDTO" nillable="true" type="tns:OwnershipDTO"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOfOwnershipDTO" nillable="true" type="tns:ArrayOfOwnershipDTO"/>
+    <xs:complexType name="OwnershipDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="IdOwnership" type="xs:int"/>
+            <xs:element minOccurs="0" name="OwnershipName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="OwnershipDTO" nillable="true" type="tns:OwnershipDTO"/>
+    <xs:complexType name="PairingAttributeAreaDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Area" type="xs:int"/>
+                    <xs:element minOccurs="0" name="WindowPx" type="xs:double"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeAreaDTO" nillable="true" type="tns:PairingAttributeAreaDTO"/>
+    <xs:complexType name="PairingAttributeDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="MatchHitsWithNullValuesForOptionalAttributes" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="PairingAttributeDTO" nillable="true" type="tns:PairingAttributeDTO"/>
+    <xs:complexType name="PairingAttributeBuildingNumberDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Co" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Cp" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeBuildingNumberDTO" nillable="true" type="tns:PairingAttributeBuildingNumberDTO"/>
+    <xs:complexType name="PairingAttributeCategoryIdDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Category" nillable="true" type="tns:CategoryDTO"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeCategoryIdDTO" nillable="true" type="tns:PairingAttributeCategoryIdDTO"/>
+    <xs:complexType name="PairingAttributeCommercialModeIdDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="CommercialMode" nillable="true" type="tns:CommercialModeDTO"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeCommercialModeIdDTO" nillable="true" type="tns:PairingAttributeCommercialModeIdDTO"/>
+    <xs:complexType name="PairingAttributeCoordinateDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="CoordinateType" type="tns:iCoordinateType"/>
+                    <xs:element minOccurs="0" name="Radius" type="xs:double"/>
+                    <xs:element minOccurs="0" name="X" type="xs:double"/>
+                    <xs:element minOccurs="0" name="Y" type="xs:double"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeCoordinateDTO" nillable="true" type="tns:PairingAttributeCoordinateDTO"/>
+    <xs:simpleType name="iCoordinateType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="JTSK"/>
+            <xs:enumeration value="WGS84"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="iCoordinateType" nillable="true" type="tns:iCoordinateType"/>
+    <xs:complexType name="PairingAttributeCountryIdDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Country" nillable="true" type="tns:CountryDTO"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeCountryIdDTO" nillable="true" type="tns:PairingAttributeCountryIdDTO"/>
+    <xs:complexType name="PairingAttributeFulltextDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Fulltext" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeFulltextDTO" nillable="true" type="tns:PairingAttributeFulltextDTO"/>
+    <xs:complexType name="PairingAttributeMunicipalityDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Municipality" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeMunicipalityDTO" nillable="true" type="tns:PairingAttributeMunicipalityDTO"/>
+    <xs:complexType name="PairingAttributeOfferTypeIdDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="OfferType" nillable="true" type="tns:OfferTypeDTO"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeOfferTypeIdDTO" nillable="true" type="tns:PairingAttributeOfferTypeIdDTO"/>
+    <xs:complexType name="PairingAttributeOwnershipIdDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Ownership" nillable="true" type="tns:OwnershipDTO"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeOwnershipIdDTO" nillable="true" type="tns:PairingAttributeOwnershipIdDTO"/>
+    <xs:complexType name="PairingAttributePriceDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Price" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="WindowPx" type="xs:double"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributePriceDTO" nillable="true" type="tns:PairingAttributePriceDTO"/>
+    <xs:complexType name="PairingAttributeStreetDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeStreetDTO" nillable="true" type="tns:PairingAttributeStreetDTO"/>
+    <xs:complexType name="PairingAttributeSubCategoryIdDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="SubCategoryByt" nillable="true" type="tns:SubCategoryBytDTO"/>
+                    <xs:element minOccurs="0" name="SubCategoryKomercniProstor" nillable="true" type="tns:SubCategoryKomercniProstorDTO"/>
+                    <xs:element minOccurs="0" name="SubCategoryParcela" nillable="true" type="tns:SubCategoryParcelaDTO"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeSubCategoryIdDTO" nillable="true" type="tns:PairingAttributeSubCategoryIdDTO"/>
+    <xs:complexType name="SubCategoryBytDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Disposition11" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="Disposition21" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="Disposition31" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="Disposition41" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="Disposition51" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="DispositionGarsoniera" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="DispositionGreaterThan51" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="SubCategoryBytDTO" nillable="true" type="tns:SubCategoryBytDTO"/>
+    <xs:complexType name="SubCategoryKomercniProstorDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Obchodni" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="Sklad" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="Vyroba" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="SubCategoryKomercniProstorDTO" nillable="true" type="tns:SubCategoryKomercniProstorDTO"/>
+    <xs:complexType name="SubCategoryParcelaDTO">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Ostatni" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="Stavebni" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="SubCategoryParcelaDTO" nillable="true" type="tns:SubCategoryParcelaDTO"/>
+    <xs:complexType name="PairingAttributeSubRegionIdDTO">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:PairingAttributeDTO">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="SubRegions" nillable="true" type="tns:ArrayOfSubRegionDTO"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="PairingAttributeSubRegionIdDTO" nillable="true" type="tns:PairingAttributeSubRegionIdDTO"/>
+</xs:schema>

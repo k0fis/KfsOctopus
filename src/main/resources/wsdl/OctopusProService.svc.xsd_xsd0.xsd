@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema elementFormDefault="qualified" targetNamespace="http://octopuspro.cz/OctopusProService" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://octopuspro.cz/OctopusProService">
+    <xs:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd2" namespace="http://www.octopuspro.cz/types/"/>
+    <xs:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.Message"/>
+    <xs:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.Message.Exekuce"/>
+    <xs:element name="get_tHit">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q1:tHitRequest" xmlns:q1="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="get_tHitResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="get_tHitResult" nillable="true" type="q2:tHitResponse" xmlns:q2="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_1a">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q3:ws_octop_1a_Request" xmlns:q3="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_1aResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_1aResult" nillable="true" type="q4:tHitResponse" xmlns:q4="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_1b">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q5:ws_octop_1b_Request" xmlns:q5="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_1bResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_1bResult" nillable="true" type="q6:tHitResponse" xmlns:q6="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_AvailableUsers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q7:RequestBase" xmlns:q7="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_AvailableUsersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_AvailableUsersResult" nillable="true" type="q8:tUserResponse" xmlns:q8="http://schemas.datacontract.org/2004/07/Octop.ActionService.Message"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_SearchProfiles_For_User">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q9:tSearchProfileRequest" xmlns:q9="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_SearchProfiles_For_UserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_SearchProfiles_For_UserResult" nillable="true" type="q10:tSearchProfileResponse" xmlns:q10="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_OfferType">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q11:LOV_OfferTypeRequest" xmlns:q11="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_OfferTypeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_LOV_OfferTypeResult" nillable="true" type="q12:LOV_OfferTypeResponse" xmlns:q12="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_Category">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q13:LOV_CategoryRequest" xmlns:q13="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_CategoryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_LOV_CategoryResult" nillable="true" type="q14:LOV_CategoryResponse" xmlns:q14="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_SubCategory">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q15:LOV_SubCategoryRequest" xmlns:q15="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_SubCategoryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_LOV_SubCategoryResult" nillable="true" type="q16:LOV_SubCategoryResponse" xmlns:q16="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_CommercialMode">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q17:LOV_CommercialModeRequest" xmlns:q17="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_CommercialModeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_LOV_CommercialModeResult" nillable="true" type="q18:LOV_CommercialModeResponse" xmlns:q18="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_Region">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q19:LOV_RegionRequest" xmlns:q19="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_RegionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_LOV_RegionResult" nillable="true" type="q20:LOV_RegionResponse" xmlns:q20="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_SubRegion">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q21:LOV_SubRegionRequest" xmlns:q21="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_SubRegionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_LOV_SubRegionResult" nillable="true" type="q22:LOV_SubRegionReponse" xmlns:q22="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_Role">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q23:LOV_RoleRequest" xmlns:q23="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_RoleResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_LOV_RoleResult" nillable="true" type="q24:LOV_RoleResponse" xmlns:q24="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_Country">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q25:LOV_CountryRequest" xmlns:q25="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_CountryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_LOV_CountryResult" nillable="true" type="q26:LOV_CountryResponse" xmlns:q26="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_Ownership">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q27:LOV_OwnershipRequest" xmlns:q27="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_get_LOV_OwnershipResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_get_LOV_OwnershipResult" nillable="true" type="q28:LOV_OwnershipResponse" xmlns:q28="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_find_KN_property">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q29:ws_find_KN_property_by_LV_Request" xmlns:q29="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_find_KN_propertyResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_find_KN_propertyResult" nillable="true" type="q30:ws_find_KN_property_Response" xmlns:q30="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_add_KN_property_to_lvkeeper">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q31:ws_add_KN_property_to_lvkeeper_Request" xmlns:q31="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_add_KN_property_to_lvkeeperResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_add_KN_property_to_lvkeeperResult" nillable="true" type="q32:ws_add_KN_property_to_lvkeeper_Response" xmlns:q32="http://schemas.datacontract.org/2004/07/Octop.ActionService.Message.Exekuce"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_remove_KN_property_from_lvkeeper">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q33:ws_remove_KN_property_from_lvkeeper_Request" xmlns:q33="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_remove_KN_property_from_lvkeeperResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_remove_KN_property_from_lvkeeperResult" nillable="true" type="q34:ws_remove_KN_property_from_lvkeeper_Response" xmlns:q34="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_get_lvkeeper_diff_xml">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q35:ws_get_lvkeeper_diff_xml_Request" xmlns:q35="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_get_lvkeeper_diff_xmlResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_get_lvkeeper_diff_xmlResult" nillable="true" type="q36:ws_get_lvkeeper_diff_xml_Response" xmlns:q36="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_change_lvkeeper_note">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q37:ws_change_lvkeeper_note_Request" xmlns:q37="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_change_lvkeeper_noteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_change_lvkeeper_noteResult" nillable="true" type="q38:ws_change_lvkeeper_note_Response" xmlns:q38="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_pairing">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q39:ws_pairing_Request" xmlns:q39="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_octop_pairingResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_octop_pairingResult" nillable="true" type="q40:tHitResponse" xmlns:q40="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="HelloWorld">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="HelloWorldResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="HelloWorldResult" nillable="true" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_tryLogin">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="request" nillable="true" type="q41:ws_tryLogin_Request" xmlns:q41="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ws_tryLoginResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ws_tryLoginResult" nillable="true" type="q42:ResponseBase" xmlns:q42="http://www.octopuspro.cz/types/"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

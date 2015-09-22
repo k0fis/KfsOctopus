@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?wsdl" uri="wsdl/OctopusProService.svc.wsdl"/>
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd0" uri="wsdl/OctopusProService.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd1" uri="wsdl/OctopusProService.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd2" uri="wsdl/OctopusProService.svc.xsd_xsd2.xsd"/>
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd3" uri="wsdl/OctopusProService.svc.xsd_xsd3.xsd"/>
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd4" uri="wsdl/OctopusProService.svc.xsd_xsd4.xsd"/>
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd5" uri="wsdl/OctopusProService.svc.xsd_xsd5.xsd"/>
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd6" uri="wsdl/OctopusProService.svc.xsd_xsd6.xsd"/>
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd7" uri="wsdl/OctopusProService.svc.xsd_xsd7.xsd"/>
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd8" uri="wsdl/OctopusProService.svc.xsd_xsd8.xsd"/>
+    <system systemId="http://publicws.octopuspro.cz/OctopusProService.svc?wsdl=wsdl0" uri="wsdl/OctopusProService.svc.wsdl_wsdl0.wsdl"/>
+</catalog>

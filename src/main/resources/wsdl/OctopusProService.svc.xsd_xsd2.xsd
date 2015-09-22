@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema elementFormDefault="qualified" targetNamespace="http://www.octopuspro.cz/types/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.octopuspro.cz/types/">
+    <xs:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    <xs:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+    <xs:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.Criteria"/>
+    <xs:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    <xs:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.ServiceImplementations"/>
+    <xs:complexType name="tHitRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdHit" type="xs:int"/>
+                    <xs:element minOccurs="0" name="IdUser" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="tHitRequest" nillable="true" type="tns:tHitRequest"/>
+    <xs:complexType name="RequestBase">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ClientPassword" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ClientTag" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ClientUsername" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="LoadOptions" nillable="true" type="q1:ArrayOfstring" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+            <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="RequestBase" nillable="true" type="tns:RequestBase"/>
+    <xs:complexType name="tHitResponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="TotalRecords" type="xs:int"/>
+                    <xs:element minOccurs="0" name="tHits" nillable="true" type="q2:ArrayOftHitDTO" xmlns:q2="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="tHitResponse" nillable="true" type="tns:tHitResponse"/>
+    <xs:complexType name="ResponseBase">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Acknowledge" type="tns:AcknowledgeType"/>
+            <xs:element minOccurs="0" name="Build" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ComparationId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ReservationExpires" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="ReservationId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="RowsAffected" type="xs:int"/>
+            <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase"/>
+    <xs:simpleType name="AcknowledgeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Failure"/>
+            <xs:enumeration value="Success"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="AcknowledgeType" nillable="true" type="tns:AcknowledgeType"/>
+    <xs:complexType name="ws_octop_1a_Request">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Criteria" nillable="true" type="q3:ws_octop_1a_Criteria" xmlns:q3="http://schemas.datacontract.org/2004/07/Octop.ActionService.Criteria"/>
+                    <xs:element minOccurs="0" name="IdSearchProfile" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="IdUser" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_octop_1a_Request" nillable="true" type="tns:ws_octop_1a_Request"/>
+    <xs:complexType name="ws_octop_1b_Request">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdSearchProfile" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="IdUser" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_octop_1b_Request" nillable="true" type="tns:ws_octop_1b_Request"/>
+    <xs:complexType name="tSearchProfileRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdUser" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="tSearchProfileRequest" nillable="true" type="tns:tSearchProfileRequest"/>
+    <xs:complexType name="tSearchProfileResponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="tSearchProfiles" nillable="true" type="q4:ArrayOftSearchProfileDTO" xmlns:q4="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="tSearchProfileResponse" nillable="true" type="tns:tSearchProfileResponse"/>
+    <xs:complexType name="LOV_OfferTypeRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="OfferType" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_OfferTypeRequest" nillable="true" type="tns:LOV_OfferTypeRequest"/>
+    <xs:complexType name="LOV_OfferTypeResponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="OfferTypes" nillable="true" type="q5:ArrayOfOfferTypeDTO" xmlns:q5="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_OfferTypeResponse" nillable="true" type="tns:LOV_OfferTypeResponse"/>
+    <xs:complexType name="LOV_CategoryRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdCategory" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_CategoryRequest" nillable="true" type="tns:LOV_CategoryRequest"/>
+    <xs:complexType name="LOV_CategoryResponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Categories" nillable="true" type="q6:ArrayOfCategoryDTO" xmlns:q6="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_CategoryResponse" nillable="true" type="tns:LOV_CategoryResponse"/>
+    <xs:complexType name="LOV_SubCategoryRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdCategory" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="SubCategory" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_SubCategoryRequest" nillable="true" type="tns:LOV_SubCategoryRequest"/>
+    <xs:complexType name="LOV_SubCategoryResponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="SubCategories" nillable="true" type="q7:ArrayOfSubCategoryDTO" xmlns:q7="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_SubCategoryResponse" nillable="true" type="tns:LOV_SubCategoryResponse"/>
+    <xs:complexType name="LOV_CommercialModeRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="CommercialMode" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_CommercialModeRequest" nillable="true" type="tns:LOV_CommercialModeRequest"/>
+    <xs:complexType name="LOV_CommercialModeResponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="CommercialModes" nillable="true" type="q8:ArrayOfCommercialModeDTO" xmlns:q8="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_CommercialModeResponse" nillable="true" type="tns:LOV_CommercialModeResponse"/>
+    <xs:complexType name="LOV_RegionRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdRegion" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_RegionRequest" nillable="true" type="tns:LOV_RegionRequest"/>
+    <xs:complexType name="LOV_RegionResponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Regions" nillable="true" type="q9:ArrayOfRegionDTO" xmlns:q9="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_RegionResponse" nillable="true" type="tns:LOV_RegionResponse"/>
+    <xs:complexType name="LOV_SubRegionRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdRegion" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="IdSubRegion" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_SubRegionRequest" nillable="true" type="tns:LOV_SubRegionRequest"/>
+    <xs:complexType name="LOV_SubRegionReponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="SubRegions" nillable="true" type="q10:ArrayOfSubRegionDTO" xmlns:q10="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_SubRegionReponse" nillable="true" type="tns:LOV_SubRegionReponse"/>
+    <xs:complexType name="LOV_RoleRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Role" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_RoleRequest" nillable="true" type="tns:LOV_RoleRequest"/>
+    <xs:complexType name="LOV_RoleResponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Roles" nillable="true" type="q11:ArrayOfRoleDTO" xmlns:q11="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_RoleResponse" nillable="true" type="tns:LOV_RoleResponse"/>
+    <xs:complexType name="LOV_CountryRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdCountry" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_CountryRequest" nillable="true" type="tns:LOV_CountryRequest"/>
+    <xs:complexType name="LOV_CountryResponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Countries" nillable="true" type="q12:ArrayOfCountryDTO" xmlns:q12="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_CountryResponse" nillable="true" type="tns:LOV_CountryResponse"/>
+    <xs:complexType name="LOV_OwnershipRequest">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdOwnership" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_OwnershipRequest" nillable="true" type="tns:LOV_OwnershipRequest"/>
+    <xs:complexType name="LOV_OwnershipResponse">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Ownerships" nillable="true" type="q13:ArrayOfOwnershipDTO" xmlns:q13="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="LOV_OwnershipResponse" nillable="true" type="tns:LOV_OwnershipResponse"/>
+    <xs:complexType name="ws_find_KN_property_by_LV_Request">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="CisloJednotky" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="CisloParcelyVedlejsi" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="CisloParcelyZakladni" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="CisloStavby" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="KodCastObec" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="KodKatastralUzemi" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="KodObec" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="LV" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="PuvodParcely" type="tns:iPuvodParcely">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="PuvodParcelyPodTyp" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" name="TypNemovitosti" type="tns:iTypNemovitosti">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="TypParcely" type="tns:iTypParcely">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="TypStavby" type="tns:iTypStavby">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_find_KN_property_by_LV_Request" nillable="true" type="tns:ws_find_KN_property_by_LV_Request"/>
+    <xs:simpleType name="iPuvodParcely">
+        <xs:list>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="PKN"/>
+                    <xs:enumeration value="PZE"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:list>
+    </xs:simpleType>
+    <xs:element name="iPuvodParcely" nillable="true" type="tns:iPuvodParcely"/>
+    <xs:simpleType name="iTypNemovitosti">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Jednotka">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Budova">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Parcela">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+                    </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="iTypNemovitosti" nillable="true" type="tns:iTypNemovitosti"/>
+    <xs:simpleType name="iTypParcely">
+        <xs:list>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Stavebni"/>
+                    <xs:enumeration value="Pozemkova"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:list>
+    </xs:simpleType>
+    <xs:element name="iTypParcely" nillable="true" type="tns:iTypParcely"/>
+    <xs:simpleType name="iTypStavby">
+        <xs:list>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="budova_s_cislem_popisnym"/>
+                    <xs:enumeration value="budova_s_cislem_evidencnim"/>
+                    <xs:enumeration value="rozestavena_budova"/>
+                    <xs:enumeration value="poschodova_garaz">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="vodni_dilo">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="bez_cisla_popisneho_a_evidencniho">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:list>
+    </xs:simpleType>
+    <xs:element name="iTypStavby" nillable="true" type="tns:iTypStavby"/>
+    <xs:complexType name="ws_find_KN_property_Response">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdNemovitosti" type="xs:int"/>
+                    <xs:element minOccurs="0" name="Nalezena" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="TypNemovitosti" type="tns:iTypNemovitosti"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_find_KN_property_Response" nillable="true" type="tns:ws_find_KN_property_Response"/>
+    <xs:complexType name="ws_add_KN_property_to_lvkeeper_Request">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdNemovitost" type="xs:int"/>
+                    <xs:element minOccurs="0" name="IdUser" type="xs:int"/>
+                    <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="TypNemovitosti" type="tns:iTypNemovitosti"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_add_KN_property_to_lvkeeper_Request" nillable="true" type="tns:ws_add_KN_property_to_lvkeeper_Request"/>
+    <xs:complexType name="ws_remove_KN_property_from_lvkeeper_Request">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdNemovitost" type="xs:int"/>
+                    <xs:element minOccurs="0" name="IdUser" type="xs:int"/>
+                    <xs:element minOccurs="0" name="TypNemovitosti" type="tns:iTypNemovitosti"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_remove_KN_property_from_lvkeeper_Request" nillable="true" type="tns:ws_remove_KN_property_from_lvkeeper_Request"/>
+    <xs:complexType name="ws_remove_KN_property_from_lvkeeper_Response">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_remove_KN_property_from_lvkeeper_Response" nillable="true" type="tns:ws_remove_KN_property_from_lvkeeper_Response"/>
+    <xs:complexType name="ws_get_lvkeeper_diff_xml_Request">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Date" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="IdUser" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_get_lvkeeper_diff_xml_Request" nillable="true" type="tns:ws_get_lvkeeper_diff_xml_Request"/>
+    <xs:complexType name="ws_get_lvkeeper_diff_xml_Response">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="DiffXml" nillable="true">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:any minOccurs="0" processContents="lax"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="Nalezeno" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_get_lvkeeper_diff_xml_Response" nillable="true" type="tns:ws_get_lvkeeper_diff_xml_Response"/>
+    <xs:complexType name="ws_change_lvkeeper_note_Request">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IdLvKeeper" type="xs:int"/>
+                    <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_change_lvkeeper_note_Request" nillable="true" type="tns:ws_change_lvkeeper_note_Request"/>
+    <xs:complexType name="ws_change_lvkeeper_note_Response">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:ResponseBase">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_change_lvkeeper_note_Response" nillable="true" type="tns:ws_change_lvkeeper_note_Response"/>
+    <xs:complexType name="ws_pairing_Request">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Area" nillable="true" type="q14:PairingAttributeAreaDTO" xmlns:q14="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element minOccurs="0" name="BuildingCpCo" nillable="true" type="q15:PairingAttributeBuildingNumberDTO" xmlns:q15="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element name="CategoryId" nillable="true" type="q16:PairingAttributeCategoryIdDTO" xmlns:q16="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element name="CommercialModeId" nillable="true" type="q17:PairingAttributeCommercialModeIdDTO" xmlns:q17="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element minOccurs="0" name="Coordinate" nillable="true" type="q18:PairingAttributeCoordinateDTO" xmlns:q18="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element name="CountryId" nillable="true" type="q19:PairingAttributeCountryIdDTO" xmlns:q19="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element minOccurs="0" name="Fulltext" nillable="true" type="q20:PairingAttributeFulltextDTO" xmlns:q20="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element minOccurs="0" name="IdRealAgencyClient" nillable="true" type="xs:int"/>
+                    <xs:element name="IdUser" type="xs:int"/>
+                    <xs:element minOccurs="0" name="Municipality" nillable="true" type="q21:PairingAttributeMunicipalityDTO" xmlns:q21="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element name="OfferTypeId" nillable="true" type="q22:PairingAttributeOfferTypeIdDTO" xmlns:q22="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element minOccurs="0" name="OwnershipId" nillable="true" type="q23:PairingAttributeOwnershipIdDTO" xmlns:q23="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element name="PairingSourceType" type="xs:int"/>
+                    <xs:element minOccurs="0" name="Price" nillable="true" type="q24:PairingAttributePriceDTO" xmlns:q24="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element name="ResultAgeDays" type="xs:int"/>
+                    <xs:element minOccurs="0" name="Street" nillable="true" type="q25:PairingAttributeStreetDTO" xmlns:q25="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element minOccurs="0" name="SubCategoryId" nillable="true" type="q26:PairingAttributeSubCategoryIdDTO" xmlns:q26="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                    <xs:element minOccurs="0" name="SubRegionId" nillable="true" type="q27:PairingAttributeSubRegionIdDTO" xmlns:q27="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_pairing_Request" nillable="true" type="tns:ws_pairing_Request"/>
+    <xs:complexType name="ws_tryLogin_Request">
+        <xs:complexContent mixed="false">
+            <xs:extension base="tns:RequestBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="AccessType" type="q28:SpecialAccessType" xmlns:q28="http://schemas.datacontract.org/2004/07/Octop.ActionService.ServiceImplementations"/>
+                    <xs:element minOccurs="0" name="IdUser" nillable="true" type="xs:int"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="ws_tryLogin_Request" nillable="true" type="tns:ws_tryLogin_Request"/>
+</xs:schema>

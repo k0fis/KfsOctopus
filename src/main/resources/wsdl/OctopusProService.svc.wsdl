@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?><wsdl:definitions name="OctopusProService" targetNamespace="http://octopuspro.cz/OctopusProService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://octopuspro.cz/OctopusProService" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://octopuspro.cz" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+    <wsdl:import namespace="http://octopuspro.cz" location="http://publicws.octopuspro.cz/OctopusProService.svc?wsdl=wsdl0"/>
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://octopuspro.cz/OctopusProService/Imports">
+            <xsd:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd0" namespace="http://octopuspro.cz/OctopusProService"/>
+            <xsd:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+            <xsd:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd2" namespace="http://www.octopuspro.cz/types/"/>
+            <xsd:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+            <xsd:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.DataTransferObjects"/>
+            <xsd:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.Criteria"/>
+            <xsd:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.Message"/>
+            <xsd:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.Message.Exekuce"/>
+            <xsd:import schemaLocation="http://publicws.octopuspro.cz/OctopusProService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Octop.ActionService.ServiceImplementations"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="IOctopusService_get_tHit_InputMessage">
+        <wsdl:part name="parameters" element="tns:get_tHit"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_get_tHit_OutputMessage">
+        <wsdl:part name="parameters" element="tns:get_tHitResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_1a_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_1a"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_1a_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_1aResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_1b_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_1b"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_1b_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_1bResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_AvailableUsers_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_AvailableUsers"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_AvailableUsers_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_AvailableUsersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_SearchProfiles_For_User_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_SearchProfiles_For_User"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_SearchProfiles_For_User_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_SearchProfiles_For_UserResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_OfferType_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_OfferType"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_OfferType_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_OfferTypeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_Category_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_Category"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_Category_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_CategoryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_SubCategory_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_SubCategory"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_SubCategory_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_SubCategoryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_CommercialMode_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_CommercialMode"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_CommercialMode_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_CommercialModeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_Region_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_Region"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_Region_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_RegionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_SubRegion_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_SubRegion"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_SubRegion_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_SubRegionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_Role_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_Role"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_Role_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_RoleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_Country_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_Country"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_Country_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_CountryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_Ownership_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_Ownership"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_get_LOV_Ownership_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_get_LOV_OwnershipResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_find_KN_property_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_find_KN_property"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_find_KN_property_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_find_KN_propertyResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_add_KN_property_to_lvkeeper_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_add_KN_property_to_lvkeeper"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_add_KN_property_to_lvkeeper_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_add_KN_property_to_lvkeeperResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_remove_KN_property_from_lvkeeper_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_remove_KN_property_from_lvkeeper"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_remove_KN_property_from_lvkeeper_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_remove_KN_property_from_lvkeeperResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_get_lvkeeper_diff_xml_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_get_lvkeeper_diff_xml"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_get_lvkeeper_diff_xml_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_get_lvkeeper_diff_xmlResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_change_lvkeeper_note_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_change_lvkeeper_note"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_change_lvkeeper_note_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_change_lvkeeper_noteResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_pairing_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_pairing"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_octop_pairing_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_octop_pairingResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_HelloWorld_InputMessage">
+        <wsdl:part name="parameters" element="tns:HelloWorld"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_HelloWorld_OutputMessage">
+        <wsdl:part name="parameters" element="tns:HelloWorldResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_tryLogin_InputMessage">
+        <wsdl:part name="parameters" element="tns:ws_tryLogin"/>
+    </wsdl:message>
+    <wsdl:message name="IOctopusService_ws_tryLogin_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ws_tryLoginResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="IOctopusService">
+        <wsdl:operation name="get_tHit">
+            <wsdl:documentation>Metoda pro načtení jednoho záznamu monitoringu realitní inzerce</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/get_tHit" message="tns:IOctopusService_get_tHit_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/get_tHitResponse" message="tns:IOctopusService_get_tHit_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_1a">
+            <wsdl:documentation>Služba pro získávání záznamů monitoringu realitní inzerce.</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_1a" message="tns:IOctopusService_ws_octop_1a_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_1aResponse" message="tns:IOctopusService_ws_octop_1a_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_1b">
+            <wsdl:documentation>Služba pro získávání záznamů monitoringu realitní inzerce. Vrátí všechny nové inzeráty pro daný vyhledávací profil, které ještě nebyly vyžádány.</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_1b" message="tns:IOctopusService_ws_octop_1b_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_1bResponse" message="tns:IOctopusService_ws_octop_1b_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_AvailableUsers">
+            <wsdl:documentation>Služba pro načtení seznamu uživatelů, na které jsou přidělená přístupová práva</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_AvailableUsers" message="tns:IOctopusService_ws_octop_get_AvailableUsers_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_AvailableUsersResponse" message="tns:IOctopusService_ws_octop_get_AvailableUsers_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_SearchProfiles_For_User">
+            <wsdl:documentation>Služba pro načtení seznamu vyhledávacích profilů pro daného uživatele, na kterého jsou přidělená přístupová práva</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_SearchProfiles_For_User" message="tns:IOctopusService_ws_octop_get_SearchProfiles_For_User_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_SearchProfiles_For_UserResponse" message="tns:IOctopusService_ws_octop_get_SearchProfiles_For_User_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_OfferType">
+            <wsdl:documentation>Načtení číselníků - OfferType</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_OfferType" message="tns:IOctopusService_ws_octop_get_LOV_OfferType_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_OfferTypeResponse" message="tns:IOctopusService_ws_octop_get_LOV_OfferType_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_Category">
+            <wsdl:documentation>Načtení číselníků - Category</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_Category" message="tns:IOctopusService_ws_octop_get_LOV_Category_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_CategoryResponse" message="tns:IOctopusService_ws_octop_get_LOV_Category_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_SubCategory">
+            <wsdl:documentation>Načtení číselníků - subkategorie</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_SubCategory" message="tns:IOctopusService_ws_octop_get_LOV_SubCategory_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_SubCategoryResponse" message="tns:IOctopusService_ws_octop_get_LOV_SubCategory_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_CommercialMode">
+            <wsdl:documentation>Načtení číselníků - CommercialMode</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_CommercialMode" message="tns:IOctopusService_ws_octop_get_LOV_CommercialMode_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_CommercialModeResponse" message="tns:IOctopusService_ws_octop_get_LOV_CommercialMode_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_Region">
+            <wsdl:documentation>Načtení číselníků - Region</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_Region" message="tns:IOctopusService_ws_octop_get_LOV_Region_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_RegionResponse" message="tns:IOctopusService_ws_octop_get_LOV_Region_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_SubRegion">
+            <wsdl:documentation>Načtení číselníků - SubRegion</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_SubRegion" message="tns:IOctopusService_ws_octop_get_LOV_SubRegion_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_SubRegionResponse" message="tns:IOctopusService_ws_octop_get_LOV_SubRegion_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_Role">
+            <wsdl:documentation>Načtení číselníků - Role</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_Role" message="tns:IOctopusService_ws_octop_get_LOV_Role_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_RoleResponse" message="tns:IOctopusService_ws_octop_get_LOV_Role_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_Country">
+            <wsdl:documentation>Načtení číselníků - Země</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_Country" message="tns:IOctopusService_ws_octop_get_LOV_Country_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_CountryResponse" message="tns:IOctopusService_ws_octop_get_LOV_Country_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_Ownership">
+            <wsdl:documentation>Načtení číselníků - Vlastnictvi</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_Ownership" message="tns:IOctopusService_ws_octop_get_LOV_Ownership_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_OwnershipResponse" message="tns:IOctopusService_ws_octop_get_LOV_Ownership_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_find_KN_property">
+            <wsdl:documentation>Metoda pro nalezení nemovitosti v KN podle zadaných parametrů</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_find_KN_property" message="tns:IOctopusService_ws_find_KN_property_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_find_KN_propertyResponse" message="tns:IOctopusService_ws_find_KN_property_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_add_KN_property_to_lvkeeper">
+            <wsdl:documentation>Metoda pro přidání nemovitosti do hlídače nemovitostí</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_add_KN_property_to_lvkeeper" message="tns:IOctopusService_ws_add_KN_property_to_lvkeeper_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_add_KN_property_to_lvkeeperResponse" message="tns:IOctopusService_ws_add_KN_property_to_lvkeeper_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_remove_KN_property_from_lvkeeper">
+            <wsdl:documentation>Metoda pro odebrání nemovitosti z hlídače nemovitostí</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_remove_KN_property_from_lvkeeper" message="tns:IOctopusService_ws_remove_KN_property_from_lvkeeper_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_remove_KN_property_from_lvkeeperResponse" message="tns:IOctopusService_ws_remove_KN_property_from_lvkeeper_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_get_lvkeeper_diff_xml">
+            <wsdl:documentation>Metoda pro získání rozdílového XML pro Hlídač nemovitostí</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_get_lvkeeper_diff_xml" message="tns:IOctopusService_ws_get_lvkeeper_diff_xml_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_get_lvkeeper_diff_xmlResponse" message="tns:IOctopusService_ws_get_lvkeeper_diff_xml_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_change_lvkeeper_note">
+            <wsdl:documentation>Metoda pro změnu poznámky hlídané nemovitosti</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_change_lvkeeper_note" message="tns:IOctopusService_ws_change_lvkeeper_note_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_change_lvkeeper_noteResponse" message="tns:IOctopusService_ws_change_lvkeeper_note_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_pairing">
+            <wsdl:documentation>Služba pro párování inzerátu podle daných pravidel s využitím PairingAttributes</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_pairing" message="tns:IOctopusService_ws_octop_pairing_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_pairingResponse" message="tns:IOctopusService_ws_octop_pairing_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="HelloWorld">
+            <wsdl:documentation>Test method returns 'Hello World!'</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/HelloWorld" message="tns:IOctopusService_HelloWorld_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/HelloWorldResponse" message="tns:IOctopusService_HelloWorld_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="ws_tryLogin">
+            <wsdl:documentation>Služba pro otestování připojení pomocí přihlašovacích údajů</wsdl:documentation>
+            <wsdl:input wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_tryLogin" message="tns:IOctopusService_ws_tryLogin_InputMessage"/>
+            <wsdl:output wsaw:Action="http://octopuspro.cz/OctopusProService/IOctopusService/ws_tryLoginResponse" message="tns:IOctopusService_ws_tryLogin_OutputMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:service name="OctopusProService">
+        <wsdl:port name="basicHttpEndpoint" binding="i0:basicHttpEndpoint">
+            <soap:address location="http://publicws.octopuspro.cz/OctopusProService.svc"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

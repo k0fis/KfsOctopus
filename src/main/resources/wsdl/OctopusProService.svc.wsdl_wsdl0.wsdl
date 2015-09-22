@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?><wsdl:definitions targetNamespace="http://octopuspro.cz" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://octopuspro.cz" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://octopuspro.cz/OctopusProService" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+    <wsdl:import namespace="http://octopuspro.cz/OctopusProService" location="http://publicws.octopuspro.cz/OctopusProService.svc?wsdl"/>
+    <wsdl:types/>
+    <wsdl:binding name="basicHttpEndpoint" type="i0:IOctopusService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="get_tHit">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/get_tHit" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_1a">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_1a" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_1b">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_1b" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_AvailableUsers">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_AvailableUsers" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_SearchProfiles_For_User">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_SearchProfiles_For_User" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_OfferType">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_OfferType" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_Category">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_Category" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_SubCategory">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_SubCategory" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_CommercialMode">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_CommercialMode" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_Region">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_Region" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_SubRegion">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_SubRegion" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_Role">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_Role" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_Country">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_Country" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_get_LOV_Ownership">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_get_LOV_Ownership" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_find_KN_property">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_find_KN_property" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_add_KN_property_to_lvkeeper">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_add_KN_property_to_lvkeeper" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_remove_KN_property_from_lvkeeper">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_remove_KN_property_from_lvkeeper" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_get_lvkeeper_diff_xml">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_get_lvkeeper_diff_xml" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_change_lvkeeper_note">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_change_lvkeeper_note" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_octop_pairing">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_octop_pairing" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="HelloWorld">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/HelloWorld" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ws_tryLogin">
+            <soap:operation soapAction="http://octopuspro.cz/OctopusProService/IOctopusService/ws_tryLogin" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>
