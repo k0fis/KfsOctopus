@@ -13,9 +13,19 @@
         <cxf.version>3.1.0</cxf.version>
     </properties>
     
-    <!--
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <!--
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
@@ -38,9 +48,9 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
         </plugins>
     </build>    
-    -->
     
     <dependencies>
         <dependency>
