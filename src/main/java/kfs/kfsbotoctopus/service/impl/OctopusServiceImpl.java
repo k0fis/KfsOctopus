@@ -4,7 +4,6 @@ import cz.octopuspro.octopusproservice.*;
 import cz.octopuspro.types.*;
 import java.net.URL;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -32,7 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class OctopusServiceImpl implements OctopusService, InitializingBean, KfsCrmDetailLoader<OctoAdvert> {
+public class OctopusServiceImpl implements OctopusService, InitializingBean {
 
     final Logger log = Logger.getLogger(getClass());
 
@@ -69,10 +68,12 @@ public class OctopusServiceImpl implements OctopusService, InitializingBean, Kfs
 
     private IOctopusService octosvc;
 
-    @Value("${octo.profilePrefix}")
-    private String profilePrefix;
+    //@Value("${octo.profilePrefix}")
+    //private String profilePrefix;
     @Value("${octo.clientId}")
     private int clientId;
+    @Value("${octo.searchProfilesId}")
+    private int[] searchProfilesId;
     @Value("${octo.clientTag}")
     private String clientTag;
     @Value("${octo.clientUsername}")
@@ -92,7 +93,7 @@ public class OctopusServiceImpl implements OctopusService, InitializingBean, Kfs
     public void afterPropertiesSet() throws Exception {
         log.info("Initializing OctopusPro services");
         URL url = getClass().getResource("/wsdl/OctopusProService.svc.wsdl_wsdl0.wsdl");
-        if (false) {
+        if (true) {
             try {
                 OctopusProService op = new OctopusProService(url);
                 ofa = new cz.octopuspro.types.ObjectFactory();
@@ -102,10 +103,10 @@ public class OctopusServiceImpl implements OctopusService, InitializingBean, Kfs
                 log.error("Cannot init octo service");
             }
         }
-        crmService.registerContactDetail(OctoAdvert.class, this);
     }
 
-    private void addOcto(THitDTO q) {
+    private void addOcto(THitDTO q, String statusName) {
+        log.info("Add Octo Adv begin");
         OctoAdvert oa = new OctoAdvert();
         if ((q.getIdCategory() != null) && !q.getIdCategory().isNil() && (q.getIdCategory().getValue() != null)) {
             oa.setCategory(getCatagory(q.getIdCategory().getValue()));
@@ -222,6 +223,8 @@ public class OctopusServiceImpl implements OctopusService, InitializingBean, Kfs
             if (oa.getEmail() != null) {
                 crmService.contactAddMail(co, oa.getEmail(), true, username);
             }
+            co.setStatus(statusName);
+            crmService.contactSave(co, username);
             oa.setContact(co);
         } else {
             oa.setNoContact(crmService.nocontactCreate(username));
@@ -234,6 +237,7 @@ public class OctopusServiceImpl implements OctopusService, InitializingBean, Kfs
             return;
         }
         octopusReplyService.replyOctopus(oa, co);
+        log.info("Add Octo Adv done");
     }
 
     private <T extends RequestBase> T prepareRb(T rb) {
@@ -652,11 +656,9 @@ public class OctopusServiceImpl implements OctopusService, InitializingBean, Kfs
     }
 
     @Override
-    public void advertLoad() {
-        if (!tryLogin()) {
-            return;
-        }
-
+    public CharSequence userList() {
+        StringBuilder sb = new StringBuilder("Octopus UserList:\n");
+        w8Ovto();
         RequestBase rb = prepareRb(new RequestBase());
 
         TUserResponse au = octosvc.wsOctopGetAvailableUsers(rb);
@@ -664,66 +666,85 @@ public class OctopusServiceImpl implements OctopusService, InitializingBean, Kfs
         if ((au != null) && (!au.getTUsers().isNil()) && (au.getTUsers().getValue() != null)
                 && (au.getTUsers().getValue().getTUserDTO() != null)) {
             aus = au.getTUsers().getValue().getTUserDTO();
+            for (TUserDTO usr : aus) {
+                sb.append("UserId: ").append(usr.getIdUser()).append(" ")
+                        .append((usr.getName() != null) ? usr.getName().getValue() : "-").append("\n");
+            }
         } else {
             log.error("wsOctopGetAvailableUsers returns null");
-            return;
         }
-        Integer userId = null;
-        for (TUserDTO usr : aus) {
-            userId = usr.getIdUser();
-            log.info("UserId: " + userId);
-        }
-        if (userId == null) {
-            log.error("User Id is null");
-            return;
-        }
+        return sb;
+    }
 
+    @Override
+    public CharSequence profileList() {
+        StringBuilder sb = new StringBuilder("Octopus Profile List for user:" + clientId + " \n");
+
+        log.info("OctopusPro advert load TSearchProfileRequest");
         TSearchProfileRequest tspr = prepareRb(new TSearchProfileRequest());
-        tspr.setIdUser(userId);
-        List<TSearchProfileDTO> ltspdtop;
+        tspr.setIdUser(clientId);
         TSearchProfileResponse tspre = octosvc.wsOctopGetSearchProfilesForUser(tspr);
         if ((tspre != null) && (tspre.getTSearchProfiles() != null)
                 && (!tspre.getTSearchProfiles().isNil())
                 && (tspre.getTSearchProfiles().getValue() != null)
                 && tspre.getTSearchProfiles().getValue().getTSearchProfileDTO() != null) {
-            ltspdtop = tspre.getTSearchProfiles().getValue().getTSearchProfileDTO();
+            List<TSearchProfileDTO> ltspdtop = tspre.getTSearchProfiles().getValue().getTSearchProfileDTO();
+            for (TSearchProfileDTO sp : ltspdtop) {
+                if (sp.getProfileName().isNil()) {
+                    log.info("proile name is nill");
+                } else  {
+                    sb.append("proile id: ").append(sp.getIdSearchProfile()).append(" name : ")
+                            .append(sp.getProfileName().getValue()).append(" \n");
+                }
+            }
         } else {
             log.error("TSearchProfileResponse returns null value");
-            return;
-        }
-        ArrayList<Integer> spl = new ArrayList<>();
-        for (TSearchProfileDTO sp : ltspdtop) {
-            if (sp.getProfileName().isNil()) {
-                log.info("proile name is nill");
-                continue;
-            }
-            log.info("proile name : " + sp.getProfileName().getValue());
-            if (sp.getProfileName().getValue().startsWith(profilePrefix)) {
-                spl.add(sp.getIdSearchProfile());
-            }
         }
 
-        if (spl.isEmpty()) {
-            log.info("No Search profile id for dl advert");
+        return sb;
+    }
+
+    @Override
+    public void advertLoad(String statusName) {
+        log.info("OctopusPro advert load begin");
+        if (!tryLogin()) {
             return;
         }
-        for (Integer sp : spl) {
-            WsOctop1ACriteria crit = new WsOctop1ACriteria();
-            crit.setPage(4000);
-            crit.setPageSize(1);
-            WsOctop1ARequest rq = prepareRb(ofa.createWsOctop1ARequest());
-            rq.setIdUser(userId);
+
+        log.info("OctopusPro advert Search profile loading");
+        for (int sp : this.searchProfilesId) {
+            w8Ovto();
+
+            WsOctop1BRequest rq = prepareRb(ofa.createWsOctop1BRequest());
+            rq.setIdUser(clientId);
             rq.setIdSearchProfile(ofa.createLOVCategoryRequestIdCategory(sp));
-            rq.setCriteria(ofa.createWsOctop1ARequestCriteria(crit));
-            THitResponse rs = check("", octosvc.wsOctop1A(rq));
+            log.info("load adv begin");
+            THitResponse rs = check("wsOctop1B", octosvc.wsOctop1B(rq));
             if ((rs != null) && (rs.getTHits() != null) && !rs.getTHits().isNil()
                     && (rs.getTHits().getValue() != null)
                     && (rs.getTHits().getValue().getTHitDTO() != null)) {
                 for (THitDTO hit : rs.getTHits().getValue().getTHitDTO()) {
-                    addOcto(hit);
+                    log.info("load adv in");
+                    addOcto(hit, statusName);
+                }
+            } else {
+                if ((rs == null)) {
+                    log.info("empty RS");
+                } else if (rs.getTHits() == null) {
+                    log.info("rs.getTHits() == null");
+                } else if (rs.getTHits().isNil()) {
+                    log.info("rs.getTHits().isNil()");
+                } else if (rs.getTHits().getValue() == null) {
+                    log.info("rs.getTHits().getValue() == null");
+                } else if (rs.getTHits().getValue().getTHitDTO() == null) {
+                    log.info("rs.getTHits().getValue().getTHitDTO() == null");
+                } else {
+                    log.info("dont known");
                 }
             }
+            log.info("load adv done");
         }
+
     }
 
     private void w8Ovto() {
@@ -741,6 +762,7 @@ public class OctopusServiceImpl implements OctopusService, InitializingBean, Kfs
             log.info("Load Regions");
             ins += loadRegion();
             log.info("Load Regions Done");
+
             w8Ovto();
             log.info("Load Subregions");
             ins += loadSubRegion();
@@ -769,6 +791,7 @@ public class OctopusServiceImpl implements OctopusService, InitializingBean, Kfs
             log.info("Load Ownership");
             ins += loadOwnership();
             log.info("Load Ownership Done");
+            w8Ovto();
         }
         return ins;
     }
@@ -784,10 +807,6 @@ public class OctopusServiceImpl implements OctopusService, InitializingBean, Kfs
 
     public void setAutoloadCountersOnInit(boolean autoloadCountersOnInit) {
         this.autoloadCountersOnInit = autoloadCountersOnInit;
-    }
-
-    public void setProfilePrefix(String profilePrefix) {
-        this.profilePrefix = profilePrefix;
     }
 
     public void setClientId(int clientId) {

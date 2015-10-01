@@ -2,6 +2,7 @@ package kfs.kfsbotoctopus.service;
 
 import java.util.List;
 import kfs.kfsbotoctopus.domain.*;
+import kfs.kfscrm.domain.KfsContact;
 
 /**
  *
@@ -10,7 +11,7 @@ import kfs.kfsbotoctopus.domain.*;
 public interface OctopusService {
     
     int countersLoad();
-    void advertLoad();
+    void advertLoad(String statusName);
     
     
     List<OctoCategory> categoryLoad();
@@ -21,4 +22,9 @@ public interface OctopusService {
     List<OctoSubRegion> subregionLoad();
     List<OctoCountry> countryLoad();
     List<OctoOwnership> ownershipLoad();
+    
+    List<OctoAdvert> loadByContact(KfsContact contact);
+    
+    CharSequence userList();
+    CharSequence profileList();
 }
